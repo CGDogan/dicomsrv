@@ -1,0 +1,51 @@
+{
+  "Plugins" : [
+    "/root/src/libOrthancIndexer.so"
+  ],
+  "Indexer" : {
+    "Enable" : true,
+    "Folders" : [ "/images/" ],   // List of folders to synchronize
+    "Interval" : 200                       // Delay between two synchronizations
+  },
+
+
+    "Name" : "camic-orthanc",
+  "DicomAet" : "CAMIC-ORTHANC",
+    "StorageDirectory" : "/images/",
+    "IndexDirectory" : "/root/src",
+  "HttpServerEnabled" : true,
+  "OrthancExplorerEnabled" : true,
+  "HttpPort" : 8042,
+  "RemoteAccessAllowed" : true,
+"AuthenticationEnabled" : false,
+
+
+  "DicomPort" : 11112,
+
+
+
+  // Whether DICOM TLS is enabled in the Orthanc SCP (new in Orthanc 1.9.0)
+
+  "DicomTlsEnabled" : false,
+  "SslEnabled" : false,
+
+
+  // Path to the TLS certificate file (in PEM format) to be used for
+
+  // both Orthanc SCP (incoming DICOM connections) and Orthanc SCU
+
+  // (outgoing DICOM connections). Note that contrarily to the
+
+  // "SslCertificate" option, the certificate and its private key must
+
+  // be split into two separate files. (new in Orthanc 1.9.0)
+
+  /**
+
+     "DicomTlsCertificate" : "orthanc.crt",
+
+  **/
+  //   "DicomTlsPrivateKey" : "orthanc.key",
+  //"DicomTlsRemoteCertificateRequired" : true,
+
+}
