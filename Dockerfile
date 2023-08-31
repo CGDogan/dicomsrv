@@ -12,6 +12,10 @@ ARG TARGETARCH
 RUN mkdir -p /images
 
 RUN mkdir -p /root/src
+
+RUN mkdir -p /root/orthanc-index
+RUN mkdir -p /root/orthanc-storage
+
 WORKDIR /root/src
 
 # Indexer plugin to sync with the caMicroscope folder
@@ -23,9 +27,6 @@ RUN chmod a+x libOrthancIndexer.so
 # TODO? orthanc-dicomweb ubuntu apt package?
 
 COPY . .
-
-# https://book.orthanc-server.com/users/docker.html
-ENV MALLOC_ARENA_MAX 5
 
 # --verbose-plugins
 CMD Orthanc --verbose-plugins /root/src/Configuration.json

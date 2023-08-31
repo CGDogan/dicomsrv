@@ -1,51 +1,40 @@
 {
+  // https://hg.orthanc-server.com/orthanc/file/Orthanc-1.12.1/OrthancServer/Resources/Configuration.json
   "Plugins" : [
     "/root/src/libOrthancIndexer.so"
   ],
   "Indexer" : {
     "Enable" : true,
-    "Folders" : [ "/images/" ],   // List of folders to synchronize
-    "Interval" : 200                       // Delay between two synchronizations
+    "Folders" : [ "/images/" ], // List of folders to synchronize
+    "Interval" : 10 // Delay between two synchronizations
   },
-
-
-    "Name" : "camic-orthanc",
+  "Name" : "camic-orthanc",
   "DicomAet" : "CAMIC-ORTHANC",
-    "StorageDirectory" : "/images/",
-    "IndexDirectory" : "/root/src",
-  "HttpServerEnabled" : true,
-  "OrthancExplorerEnabled" : true,
-  "HttpPort" : 8042,
+  "StorageDirectory" : "/root/orthanc-storage",
+  "IndexDirectory" : "/root/orthanc-index",
+  "HttpServerEnabled" : true, // Rest API and GUI
+  "OrthancExplorerEnabled" : true, // GUI
+  "HttpPort" : 8042, // Rest API and GUI
   "RemoteAccessAllowed" : true,
-"AuthenticationEnabled" : false,
+  "AuthenticationEnabled" : false, // Basic HTTP auth for GUI as in http://httpbin.org/basic-auth/foo/bar
+  //"RegisteredUsers" : {
+    // "alice" : "alicePassword"
+  //},
+  "SslEnabled" : false, // HTTP server
+  //"SslCertificate" : "/certificate.pem", // both cert and private key
 
+  "MallocArenaMax" : 5, // Suggested by docs to regulate memory use
+  "DicomThreadsCount" : 3,
 
   "DicomPort" : 11112,
-
-
-
-  // Whether DICOM TLS is enabled in the Orthanc SCP (new in Orthanc 1.9.0)
-
-  "DicomTlsEnabled" : false,
-  "SslEnabled" : false,
-
-
-  // Path to the TLS certificate file (in PEM format) to be used for
-
-  // both Orthanc SCP (incoming DICOM connections) and Orthanc SCU
-
-  // (outgoing DICOM connections). Note that contrarily to the
-
-  // "SslCertificate" option, the certificate and its private key must
-
-  // be split into two separate files. (new in Orthanc 1.9.0)
-
-  /**
-
-     "DicomTlsCertificate" : "orthanc.crt",
-
-  **/
-  //   "DicomTlsPrivateKey" : "orthanc.key",
-  //"DicomTlsRemoteCertificateRequired" : true,
-
+  "DicomTlsEnabled" : false, // DICOM server
+  //"DicomTlsCertificate" : "/orthanc.crt", // For DICOM unlike HTTP, cert and pkey
+  //"DicomTlsPrivateKey" : "/orthanc.key",  // need to be provided as separate files
+  //"DicomTlsRemoteCertificateRequired" : false,
+  "DicomAlwaysAllowStore" : true, // allow c-store (save) from clients not specified in "DicomModalities"
+  // Orthanc suggests the following 5 settings to be false by default for security
+  "DicomAlwaysAllowFind" : true,
+  "DicomAlwaysAllowFindWorklist" : true,
+  "DicomAlwaysAllowGet" : true,
+  "DicomAlwaysAllowMove" : true
 }
