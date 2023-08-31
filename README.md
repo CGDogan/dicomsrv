@@ -3,7 +3,7 @@
 Builds Docker images for orthanc.
 
 ```
-docker run -i -t -p 8042:8042 orthanc
+docker run [-v /path/to/images:/images] -i -t -p 8042:8042 camicroscope/dicomsrv
 ```
 
 `-i -t` required [to be able to stop the container](https://stackoverflow.com/a/41099052)
