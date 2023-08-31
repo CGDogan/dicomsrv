@@ -1,5 +1,6 @@
 {
   // https://hg.orthanc-server.com/orthanc/file/Orthanc-1.12.1/OrthancServer/Resources/Configuration.json
+  // Configuration.json supports importing ENV vars with ${YourEnvVarName}
   "Plugins" : [
     "/root/src/libOrthancIndexer.so"
   ],
@@ -28,8 +29,8 @@
 
   "DicomPort" : 11112,
   "DicomTlsEnabled" : false, // DICOM server
-  //"DicomTlsCertificate" : "/orthanc.crt", // For DICOM unlike HTTP, cert and pkey
-  //"DicomTlsPrivateKey" : "/orthanc.key",  // need to be provided as separate files
+  //"DicomTlsCertificate" : "/orthanc.cer", // For DICOM unlike HTTP, cert (cer or cert or pub)
+  //"DicomTlsPrivateKey" : "/orthanc.key",  // and pkey need to be provided as separate files
   //"DicomTlsRemoteCertificateRequired" : false,
   "DicomAlwaysAllowStore" : true, // allow c-store (save) from clients not specified in "DicomModalities"
   // Orthanc suggests the following 5 settings to be false by default for security

@@ -2,7 +2,7 @@ FROM ubuntu:lunar
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update -y
-RUN apt-get -q install -y orthanc
+RUN apt-get -q install -y orthanc libssl-dev
 
 EXPOSE 11112
 EXPOSE 8042
