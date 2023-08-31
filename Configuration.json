@@ -1,48 +1,32 @@
 {
-  // https://hg.orthanc-server.com/orthanc/file/Orthanc-1.12.1/OrthancServer/Resources/Configuration.json
-  // Configuration.json supports importing ENV vars with ${YourEnvVarName}
+  // Basic Configuration.json for simplified local testing
+  // See https://github.com/camicroscope/Distro/ for a more detailed template
   "Plugins" : [
     "/root/src/libOrthancIndexer.so"
   ],
   "Indexer" : {
     "Enable" : true,
-    "Folders" : [ "/images/" ], // List of folders to synchronize
-    "Interval" : 10 // Delay between two synchronizations
+    "Folders" : [ "/images/" ],
+    "Interval" : 10
   },
   "Name" : "camic-orthanc",
   "DicomAet" : "CAMIC-ORTHANC",
   "StorageDirectory" : "/root/orthanc-storage",
   "IndexDirectory" : "/root/orthanc-index",
-  "HttpServerEnabled" : true, // Rest API and GUI
-  "OrthancExplorerEnabled" : true, // GUI
-  "HttpPort" : 8042, // Rest API and GUI
+  "HttpServerEnabled" : true,
+  "OrthancExplorerEnabled" : true,
+  "HttpPort" : 8042,
   "RemoteAccessAllowed" : true,
-  "AuthenticationEnabled" : false, // Basic HTTP auth for GUI as in http://httpbin.org/basic-auth/foo/bar
-  //"RegisteredUsers" : {
-    // "alice" : "alicePassword"
-  //},
-  "SslEnabled" : false, // HTTP server
-  //"SslCertificate" : "/certificate.pem", // both cert and private key
-
-  "MallocArenaMax" : 5, // Suggested by docs to regulate memory use
+  "AuthenticationEnabled" : false,
+  "SslEnabled" : false,
+  "MallocArenaMax" : 5,
   "DicomThreadsCount" : 3,
-
   "DicomPort" : 11112,
-  "DicomTlsEnabled" : false, // DICOM server
-  //"DicomTlsCertificate" : "/orthanc.cer", // For DICOM unlike HTTP, cert (cer or cert or pub)
-  //"DicomTlsPrivateKey" : "/orthanc.key",  // and pkey need to be provided as separate files
-  //"DicomTlsRemoteCertificateRequired" : false,
-  "DicomAlwaysAllowStore" : true, // allow c-store (save) from clients not specified in "DicomModalities"
-  // Orthanc suggests the following 5 settings to be false by default for security
+  "DicomTlsEnabled" : false,
+  "DicomAlwaysAllowStore" : true,
   "DicomAlwaysAllowFind" : true,
   "DicomAlwaysAllowFindWorklist" : true,
   "DicomAlwaysAllowGet" : true,
   "DicomAlwaysAllowMove" : true,
-
-  "DicomCheckModalityHost" : false, // Only check the AET or check the IP as well
-  "DicomModalities" : {
-    // AET, IP, port
-    // "sample" : ["MYSRV", "127.0.0.1", 1300]
-    // See the link at the beginning of the file for selectively giving permissions
-  }
+  "DicomCheckModalityHost" : false
 }
