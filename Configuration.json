@@ -36,5 +36,12 @@
   "DicomAlwaysAllowFind" : true,
   "DicomAlwaysAllowFindWorklist" : true,
   "DicomAlwaysAllowGet" : true,
-  "DicomAlwaysAllowMove" : true
+  "DicomAlwaysAllowMove" : true,
+
+  "DicomCheckModalityHost" : false, // Only check the AET or check the IP as well
+  "DicomModalities" : {
+    // AET, IP, port
+    // "sample" : ["MYSRV", "127.0.0.1", 1300]
+    // See the link at the beginning of the file for selectively giving permissions
+  }
 }
