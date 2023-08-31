@@ -25,7 +25,7 @@ RUN chmod a+x libOrthancIndexer.so
 COPY . .
 
 # https://book.orthanc-server.com/users/docker.html
-#ENV MALLOC_ARENA_MAX 5
+ENV MALLOC_ARENA_MAX 5
 
 # --verbose-plugins
 CMD Orthanc --verbose-plugins /root/src/Configuration.json
