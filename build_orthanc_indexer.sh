@@ -21,7 +21,7 @@ apt-get -q install -y mercurial cmake make g++ patch unzip libdcmtk-dev
 # hg update -r<REV>
 
 apt-get -q install -y git
-git clone https://github.com/CGDogan/orthanc-indexer
+git clone https://github.com/CGDogan/orthanc-indexer --branch=rewrite
 
 cd orthanc-indexer
 mkdir build
