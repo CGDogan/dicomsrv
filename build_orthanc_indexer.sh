@@ -29,7 +29,7 @@ cd build
 cmake .. -DSTATIC_BUILD=ON -DCMAKE_BUILD_TYPE=Release
 
 # If needed: VERBOSE=1
-make -v -j$(nproc)
+make VERBOSE=1 -j$(nproc)
 mv libOrthancIndexer.so.mainline ../../libOrthancIndexer.so
 cd ../..
 rm -rf orthanc-indexer
