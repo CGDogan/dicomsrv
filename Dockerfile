@@ -15,7 +15,6 @@ RUN mkdir -p /images
 RUN mkdir -p /root/src
 RUN mkdir -p /root/keys
 RUN mkdir -p /root/orthanc-index
-RUN mkdir -p /root/orthanc-storage
 
 WORKDIR /root/src
 

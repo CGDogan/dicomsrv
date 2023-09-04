@@ -11,7 +11,7 @@
   },
   "Name" : "camic-orthanc",
   "DicomAet" : "CAMIC-ORTHANC",
-  "StorageDirectory" : "/root/orthanc-storage",
+  "StorageDirectory" : "/images/",
   "IndexDirectory" : "/root/orthanc-index",
   "HttpServerEnabled" : true,
   "OrthancExplorerEnabled" : true,
