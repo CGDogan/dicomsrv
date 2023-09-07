@@ -27,7 +27,7 @@ cd orthanc-indexer
 mkdir build
 cd build
 
-# todo remove?           
+# todo remove?            
 apt-get -q install -y libboost-all-dev
 cmake .. -DSTATIC_BUILD=ON -DCMAKE_BUILD_TYPE=Release
 
