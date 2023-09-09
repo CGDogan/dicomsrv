@@ -15,10 +15,9 @@ set -x
 # Build from source on all platforms
 # Need the "skip large files" patch
 
-apt-get -q install -y mercurial cmake make g++ patch unzip libdcmtk-dev
-# TODO uncomment
-#hg clone https://orthanc.uclouvain.be/hg/orthanc-indexer
-# hg update -r<REV>
+apt-get -q install -y cmake make g++ patch unzip
+# apt-get -q install -y mercurial
+# hg clone https://orthanc.uclouvain.be/hg/orthanc-indexer
 
 apt-get -q install -y git
 git clone https://github.com/CGDogan/orthanc-indexer --branch=rewrite

@@ -9,6 +9,7 @@
     "Folders" : [ "/images/" ],
     "Interval" : 10
   },
+  "StorageCompression" : false, // "true" is incompatible with caMicroscope
   "Name" : "camic-orthanc",
   "DicomAet" : "CAMIC-ORTHANC",
   "StorageDirectory" : "/images/",
