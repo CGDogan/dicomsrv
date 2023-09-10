@@ -8,7 +8,7 @@ RUN apt-get -q install -y orthanc libssl-dev
 
 # indexer plugin dependencies
 # libboost-iostreams-dev can be removed in the future (maybe)
-apt-get -q install -y git mercurial cmake make g++ patch unzip libcurl4-openssl-dev libboost-iostreams-dev
+RUN apt-get -q install -y git mercurial cmake make g++ patch unzip libcurl4-openssl-dev libboost-iostreams-dev
 
 EXPOSE 11112
 EXPOSE 8042
