@@ -4,7 +4,7 @@ set -x
 # https://book.orthanc-server.com/plugins/indexer.html
 
 # libboost-all-dev can be removed in the future (maybe)
-apt-get -q install -y git mercurial cmake make g++ patch unzip libcurl-dev libboost-all-dev
+apt-get -q install -y git mercurial cmake make g++ patch unzip libcurl4-openssl-dev libboost-all-dev
 
 git clone https://github.com/CGDogan/orthanc-indexer --branch=rewrite
 
