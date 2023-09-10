@@ -7,7 +7,7 @@
   "Indexer" : {
     "Enable" : true,
     "Folders" : [ "/images/" ],
-    "Interval" : 70
+    "Interval" : 10
   },
   "StorageCompression" : false, // "true" is incompatible with caMicroscope
   "Name" : "camic-orthanc",
