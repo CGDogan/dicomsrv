@@ -3,30 +3,15 @@ set -x
 
 # https://book.orthanc-server.com/plugins/indexer.html
 
-#if [ "$TARGETARCH" = amd64 ]; then 
-# https://www.orthanc-server.com/browse.php?path=/plugin-indexer
-# https://lsb.orthanc-server.com/plugin-indexer/mainline/
-#apt-get -q install -y curl
-#curl https://lsb.orthanc-server.com/plugin-indexer/mainline/libOrthancIndexer.so -o libOrthancIndexer.so
-#else
-# <build>
-#fi
+# libboost-all-dev can be removed in the future (maybe)
+apt-get -q install -y git mercurial cmake make g++ patch unzip libcurl-dev libboost-all-dev
 
-# Build from source on all platforms
-# Need the "skip large files" patch
-
-apt-get -q install -y mercurial cmake make g++ patch unzip
-# hg clone https://orthanc.uclouvain.be/hg/orthanc-indexer
-
-apt-get -q install -y git
 git clone https://github.com/CGDogan/orthanc-indexer --branch=rewrite
 
 cd orthanc-indexer
 mkdir build
 cd build
 
-# todo remove?                                       
-apt-get -q install -y libboost-all-dev
 cmake .. -DSTATIC_BUILD=ON -DCMAKE_BUILD_TYPE=Release
 
 # If needed: VERBOSE=1
