@@ -3,9 +3,6 @@ set -x
 
 # https://book.orthanc-server.com/plugins/indexer.html
 
-# libboost-iostreams-dev can be removed in the future (maybe)
-apt-get -q install -y git mercurial cmake make g++ patch unzip libcurl4-openssl-dev libboost-iostreams-dev
-
 git clone https://github.com/CGDogan/orthanc-indexer --branch=rewrite
 
 cd orthanc-indexer
