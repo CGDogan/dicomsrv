@@ -17,3 +17,5 @@ make VERBOSE=1 -j$(nproc)
 mv libOrthancIndexer.so.mainline ../../libOrthancIndexer.so
 cd ../..
 rm -rf orthanc-indexer
+
+#deletethiscomment
