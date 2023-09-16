@@ -18,4 +18,4 @@ mv libOrthancIndexer.so.mainline ../../libOrthancIndexer.so
 cd ../..
 rm -rf orthanc-indexer
 
-#deletethiscomment           
+#deletethiscomment            
